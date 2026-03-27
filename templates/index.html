@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Loan Prediction</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark px-4">
+        <span class="navbar-brand mb-0 h1">🏡 Home Loan Prediction</span>
+        <div>
+            <a href="/home" class="btn btn-outline-light btn-sm me-2">Home</a>
+            <a href="/visual" class="btn btn-outline-light btn-sm">Visualization</a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+
+        <div class="card shadow-lg p-4 glass-card" style="width: 450px;">
+            <h3 class="text-center mb-4">Check Loan Eligibility</h3>
+
+            <form action="/predict" method="post">
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Age</label>
+                        <input type="number" name="age" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Experience</label>
+                        <input type="number" name="exp" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>Income</label>
+                    <input type="number" name="income" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Family Size</label>
+                    <input type="number" name="family" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Credit Card Avg</label>
+                    <input type="number" step="0.1" name="ccavg" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Education (1/2/3)</label>
+                    <input type="number" name="edu" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Mortgage</label>
+                    <input type="number" name="mortgage" class="form-control" required>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label>Securities</label>
+                        <input type="number" name="secur" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>CD Account</label>
+                        <input type="number" name="cd" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Online</label>
+                        <input type="number" name="online" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>Credit Card</label>
+                    <input type="number" name="cred" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Predict</button>
+            </form>
+
+            {% if predicted_cost %}
+                <div class="alert alert-info text-center mt-3">
+                    Prediction: <strong>{{ predicted_cost }}</strong>
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Loan Acceptance</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aladin&amp;display=swap">
+  <link rel="stylesheet" href="static/css/Navbar-Right-Links-icons.css">
+</head>
+
+<body style="width: 984.6px;margin-right: 416px;padding-right: 0px;background: url(&quot;static/img/bgg-1.jpg&quot;);">
+
+  <nav class="navbar navbar-light navbar-expand-md py-3">
+    <div class="container"><a class="navbar-brand d-flex align-items-center" href="#" style="height: 53.5px;margin: 21px;"><span style="margin: 77px;padding: 0px;font-family: Aladin, serif;font-size: 39px;color: rgba(220,224,50,0.9);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Personal Loan Acceptancen&nbsp;</span></a></div>
+</nav>
+<nav class="navbar navbar-light navbar-expand-md py-3" style="width: 1212.6px;height: 34px;padding-right: 0px;margin-right: -1px;">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navcol-2" style="margin: -16px;">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="/home" style="font-weight: bold;font-size: 20px;">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/visual" style="font-weight: bold;font-size: 20px;">Data-Visualization</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script src="static/bootstrap/js/bootstrap.min.js"></script>
+
+ <div class="login">
+	<h1>Personal Loan Acceptance</h1>
+    <br>
+    {% if predicted_cost %}
+    <p>Predicted Personal Loan Acceptance: {{ predicted_cost }}</p>
+    {% endif %}
+
+   <br>
+   
+
+ </div>
+
+
+</body>
+</html>
