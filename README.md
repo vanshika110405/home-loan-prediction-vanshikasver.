@@ -23,3 +23,6 @@ This project predicts whether a customer will be eligible for a home loan using 
 ## ▶️ How to Run
 ```bash
 python app.py
+
+## 👩‍💻 Author
+Vanshika M
